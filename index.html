@@ -1,0 +1,16 @@
+<body>
+<ol id="students">
+</ol>
+<script>
+    let ol=document.getElementById('students')
+    fetch('https://students-1-wpt6.onrender.com/')
+      .then(response => response.json())
+      .then(json => 
+    json.forEach(std => {
+        let li=document.createElement('li')
+        li.innerHTML=std.name;
+        ol.appendChild(li);
+    }))
+</script>
+</body>
+
